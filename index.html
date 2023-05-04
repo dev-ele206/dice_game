@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+</head>
+
+<body>
+    <h1>Dice game</h1>
+    <button onclick="rollDice()">Roll the dice</button>
+    <p>Player 1: <span id="player1"></span></p>
+    <p>Player 2: <span id="player2"></span></p>
+    <p id="score"></p>
+    <script>
+        function rollDice() {
+            var player1 = Math.floor(Math.random() * 6) + 1;
+            var player2 = Math.floor(Math.random() * 6) + 1;
+
+            // Display the results on the webpage
+            document.getElementById("player1").innerHTML = player1;
+            document.getElementById("player2").innerHTML = player2;
+
+            if (player1 > player2) {
+                document.getElementById('score').innerHTML = 'player 1 wins'
+            } else if (player1 < player2) {
+                document.getElementById('score').innerHTML = 'player 2 wins'
+            } else {
+                document.getElementById('score').innerHTML = 'its a tie'
+            }
+        }
+
+    </script>
+</body>
+
+</html>
